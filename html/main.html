@@ -1,0 +1,38 @@
+<main class="main">
+  <div class="comments">
+    <?php echo showAllComments(); ?>
+    <!-- Это template для отображения новых комментов через js -->
+    <template id="comment-template">
+      <div class="comments__line">
+        <div class="comments__info">
+          <p class="comments__name"></p>
+          <div class="comments__date-container">
+            <p class="comments__time"></p>
+            <p class="comments__date"></p>
+          </div>
+        </div>
+        <p class="comments__text"></p>
+      </div>
+    </template>
+  </div>
+  <hr class="hr" />
+  <form class="form" id="form" action="" method="post">
+    <h3 class="form__title">Оставьте комментарий</h3>
+    <div class="form__fields">
+      <label class="form__label" for="name-input">Ваше имя</label>
+      <input type="text" id="name-input" class="form__input form__input_type_name" name="name" minlength="1" maxlength="40" value="" required />
+      <label class="form__label" for="comment-input">Ваш комментарий</label>
+      <textarea
+        form="form"
+        id="comment-input"
+        class="form__input form__input_type_comment"
+        name="comment"
+        minlength="1"
+        maxlength="500"
+        wrap="soft"
+        required
+      ></textarea>
+    </div>
+    <button type="submit" class="form__btn form__btn_type_submit">Отправить</button>
+  </form>
+</main>
